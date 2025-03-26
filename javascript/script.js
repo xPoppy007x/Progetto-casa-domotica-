@@ -1,13 +1,17 @@
 "use strict";
 
-function drop_list(x) {
-    x.classList.toggle("change");
+let burger = document.getElementById("burger");
 
-    let drop = document.getElementById("burger_links");
- 
-    if(drop.style.display === "block") {
-        drop.style.display = "none";
-    } else {
-        drop.style.display = "block";
-    }
-}
+burger.addEventListener("click", () => {    
+    burger.classList.toggle("change");
+
+    let drop_down = document.getElementById("burger_links");
+    let nav = document.getElementsByTagName("nav")[0];
+
+    if(drop_down.style.display === "block") 
+        drop_down.style.display = "none";
+        
+    else 
+        drop_down.style.display = "block";
+        drop_down.style.top = nav.offsetHeight + "px";
+});

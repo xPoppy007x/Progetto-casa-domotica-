@@ -17,11 +17,12 @@ camera.position.z = 1000;
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enablePan = false;
-controls.minDistance = 500;
-controls.maxDistance = 1000;
 controls.enableDamping = true;
 
-controls.maxPolarAngle = Math.PI / 2;
+controls.minDistance = 500;
+controls.maxDistance = 600;
+
+controls.maxPolarAngle = controls.minPolarAngle = Math.PI/3;
 
 controls.target.set(10, 0, 10);
 controls.update();
@@ -36,15 +37,18 @@ loader.load(
 
     function (gltf) {
         object = gltf.scene;
-        object.scale.set(70, 70, 70);
+        
         object.position.set(0, 0, 100);
 
         if(window.matchMedia("(max-width: 1080px)").matches) {
             camera.position.set(200, 250, 1000);
-            object.scale.set(70, 70, 70);
+            object.scale.set(40, 35, 40);
+        } else if(window.matchMedia("(max-width: 768px)").matches) {
+            camera.position.set(200, 250, 650);
+            object.scale.set(20, 20, 20);
         } else {
             camera.position.set(200, 250, 650);
-            object.scale.set(70, 50, 70);
+            object.scale.set(50, 50, 50);   
         }
 
         object.rotation.y = 1.6;
@@ -64,7 +68,6 @@ loader.load(
 
 const topLight = new three.DirectionalLight(0xffffff, 1);
 topLight.position.set(100, 10, 10);
-topLight.castShadow = true;
 
 const ambientLight = new three.AmbientLight(0x333333, 1);
 

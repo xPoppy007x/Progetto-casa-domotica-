@@ -1,11 +1,11 @@
-@import url("../css/body.css");
+@import url("./mains.css");
 
 
 .bar {
     width: 35px;
     height: 5px;
 
-    background-color: var(--milk_white);
+    background-color: var(--white_hover);
     margin: 6px 0;
     transition: 0.4s;
 } 

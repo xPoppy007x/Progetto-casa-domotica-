@@ -1,4 +1,4 @@
-@import url("./body.css");
+@import url("./mains.css");
 
 nav {
     width: 100%;
@@ -7,20 +7,22 @@ nav {
     max-height: 90px;
 
     height: 20vh;
-    background-color: var(--black_galaxy);
+    background-color: var(--black);  
     
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-}
+}   
 
 a {
+    font-family: var(--std_font);
     font-size: 1.5em;
-    font-family: Manolo, Verdana, Helvetica;
-    color: var(--milk_white);
+    font-weight: 750;
 
     text-transform: uppercase;
     text-decoration: none;
+
+    color: var(--white_hover);
 }
 
 ul {
@@ -54,7 +56,7 @@ li > a::before {
     width: 0px;
     height: 3px;
 
-    background-color: var(--milk_white);
+    background-color: var(--white_hover);
     transition: width 0.25s ease-out;
 }
 li > a:hover::before {
@@ -68,12 +70,12 @@ li > a:hover::before {
     align-items: center;
 }
 #logo p {
-    font-family: Manolo, Verdana, Helvetica; 
-    color: var(--milk_white);
+    font-family: var(--std_font); 
+    color: var(--white_hover);
     text-transform: uppercase;
 }
 #logo p > a {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 #link {
@@ -93,9 +95,10 @@ li > a:hover::before {
     padding-left: 50px;
 }
 
-#slit {
-    display: none;
-}
+#slit { display: none; }
+#burger_links { display: none; }
+#burger_links > a { display: none; }
+
 
 @media screen and (max-width: 1080px) {
     #img_logo { padding-left: 0px; }
@@ -116,37 +119,34 @@ li > a:hover::before {
         background-color: transparent;
         position: relative;
     }
-    #burger a {
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 1.2em;
-        display: block;
-    }
-    #burger a:hover {
-        background-color: #333;
-    }
 
     #burger_links {
+        position: absolute;
+        top: 0%;
+        right: 0px;
+
         width: 100%;
         text-align: right;
         float: right;
 
         display: none;
-        background-color: var(--black_galaxy);
+        background-color: var(--black);
+        z-index: 10;
     }
     #burger_links > a {
+        font-size: 1.3em;
         display: block;
         text-align: right;
         
         padding-right: 5%;
-        line-height: 1.6;
+        line-height: 1.5;
 
-        color: var(--milk_white);
+        color: var(--white_hover);
         
     }
     #burger_links > a:hover {
-        background-color: var(--link_hover);
-        color: var(--black_galaxy);
+        background-color: var(--white_hover);
+        color: var(--black);
     }
 
 }
