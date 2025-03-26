@@ -3,6 +3,9 @@
     --black_galaxy: #1D1616;
     --cyan_wallpaper: #F8F5E9;
     --card_color: #212121;
+    --link_view: #1D1616;
+
+    --link_hover: #DBDBDB;
 }
 
 @font-face {

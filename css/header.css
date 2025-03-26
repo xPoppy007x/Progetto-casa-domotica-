@@ -111,7 +111,42 @@ li > a:hover::before {
         justify-content: center;
     }
 
-    #burger a {
-        display: none;
+    #burger {
+        overflow: hidden;
+        background-color: transparent;
+        position: relative;
     }
+    #burger a {
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1.2em;
+        display: block;
+    }
+    #burger a:hover {
+        background-color: #333;
+    }
+
+    #burger_links {
+        width: 100%;
+        text-align: right;
+        float: right;
+
+        display: none;
+        background-color: var(--black_galaxy);
+    }
+    #burger_links > a {
+        display: block;
+        text-align: right;
+        
+        padding-right: 5%;
+        line-height: 1.6;
+
+        color: var(--milk_white);
+        
+    }
+    #burger_links > a:hover {
+        background-color: var(--link_hover);
+        color: var(--black_galaxy);
+    }
+
 }
