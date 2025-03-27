@@ -45,7 +45,7 @@ loader.load(
             object.scale.set(40, 35, 40);
         } else if(window.matchMedia("(max-width: 768px)").matches) {
             camera.position.set(200, 250, 650);
-            object.scale.set(20, 20, 20);
+            object.scale.set(40, 35, 40);
         } else {
             camera.position.set(200, 250, 650);
             object.scale.set(50, 50, 50);   
